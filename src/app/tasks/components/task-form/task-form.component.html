@@ -1,0 +1,36 @@
+<ion-content>
+  <form [formGroup]="taskForm" (ngSubmit)="saveTask()"> <!-- ✅ Aquí debe estar el formGroup -->
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input formControlName="title"></ion-input> 
+    </ion-item>
+    <ion-text color="danger" *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched">
+      El título es obligatorio.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-text color="danger" *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched">
+      La descripción es obligatoria.
+    </ion-text>
+
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime formControlName="date" display-format="DD/MM/YYYY"></ion-datetime>
+    </ion-item>
+    
+
+    <ion-text color="danger" *ngIf="taskForm.get('date')?.hasError('pastDate') && taskForm.get('date')?.touched">
+      No puedes seleccionar una fecha pasada.
+    </ion-text>
+    
+
+    <ion-footer>
+      <ion-button expand="full" type="submit" [disabled]="taskForm.invalid">
+        {{ task ? 'Actualizar' : 'Guardar' }}
+      </ion-button>
+    </ion-footer>
+  </form>
+</ion-content>

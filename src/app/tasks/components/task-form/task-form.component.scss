@@ -1,0 +1,56 @@
+:host {
+    display: block;
+    padding: 20px;
+    background: #f4faff;
+    border-radius: 12px;
+  }
+  
+  
+  ion-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  ion-label {
+    font-weight: 600;
+    color: #004085; 
+    font-size: 16px;
+  }
+  
+ 
+  ion-input,
+  ion-textarea,
+  ion-datetime {
+    --background: #e7f1ff; 
+    --color: #003366; 
+    --placeholder-color: #5a7faa; 
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  ion-button {
+    --background: #007bff; 
+    --color: white;
+    --border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  ion-button.cancel {
+    --background: #ff4d4d; 
+  }
+  
+ 
+  ion-item {
+    position: relative;
+    z-index: 1;
+  }
+  
+  ion-datetime {
+    z-index: 1000 !important;
+  }
+  
